@@ -28,3 +28,22 @@ foo.second() // => 2
 ```
 
 It's important to notice here that the maps create a brand new tuple and return it. **This may be subject to change** for quality of life and usage purposes.
+
+### Maybe
+
+The Maybe type is a WIP currently.
+
+The Maybe type allows for data to be there, or not. (it's maybe there)
+
+#### Usage
+
+```js
+const { Maybe, Just, Nothing } = require('runte/Maybe')
+
+Maybe(10).withDefault('N/A') // => 10
+Maybe(null).withDefault('N/A') // => 'N/A'
+Nothing() // => []
+Just(10) // => 10
+```
+
+More to come and tweaks to happen on the Maybe type soon.
