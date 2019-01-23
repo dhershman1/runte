@@ -1,0 +1,28 @@
+{
+  "name": "runte",
+  "version": "0.1.0",
+  "description": "A simple set of new Data types",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape tests/*.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhershman1/runte.git"
+  },
+  "keywords": [
+    "data",
+    "types"
+  ],
+  "author": "Dustin Hershman <dustinh17@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dhershman1/runte/issues"
+  },
+  "homepage": "https://github.com/dhershman1/runte#readme",
+  "devDependencies": {
+    "standard": "^12.0.1",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.2"
+  }
+}
