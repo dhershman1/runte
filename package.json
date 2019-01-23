@@ -24,5 +24,8 @@
     "standard": "^12.0.1",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.2"
+  },
+  "dependencies": {
+    "kyanite": "^0.11.1"
   }
 }
