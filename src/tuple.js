@@ -4,10 +4,10 @@
  */
 const _curry2 = require('./_internal/_curry2')
 const _type = require('./_internal/_types').Tuple
-const _isNil = require('./_internal/_isNil')
+const { isNil } = require('kyanite')
 
 function Tuple (a, b) {
-  if (_isNil(a) || _isNil(b)) {
+  if (isNil(a) || isNil(b)) {
     throw new Error('Tuples must have 2 values to set')
   }
   const slots = [].slice.call([a, b])
@@ -44,7 +44,10 @@ function Tuple (a, b) {
     mapFirst,
     mapSecond,
     constructor: Tuple,
-    '@@type': _type
+    '@@type': _type,
+    [Symbol.hasInstance]: instance => {
+      return instance['@@type'] === _type
+    }
   }
 }
 

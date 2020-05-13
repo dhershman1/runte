@@ -1,5 +1,5 @@
 const _type = require('./_internal/_types').Maybe
-const _isNil = require('./_internal/_isNil')
+const { isNil } = require('kyanite')
 
 function Nothing () {
   return []
@@ -10,9 +10,8 @@ function Just (a) {
 }
 
 function Maybe (x) {
-
   function withDefault (n) {
-    if (_isNil(x)) {
+    if (isNil(x)) {
       return n
     }
 
@@ -27,7 +26,10 @@ function Maybe (x) {
     withDefault,
     zero,
     constructor: Maybe,
-    '@@type': _type
+    '@@type': _type,
+    [Symbol.hasInstance]: instance => {
+      return instance['@@type'] === _type
+    }
   }
 }
 
