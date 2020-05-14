@@ -1,4 +1,3 @@
-const { prepend, take } = require('kyanite')
 const _type = require('./_internal/_types').Queue
 
 function Queue (...list) {
@@ -6,7 +5,7 @@ function Queue (...list) {
   let size = list.length
 
   function enqueue (d) {
-    data = Queue(prepend(d, data))
+    data = Queue(data.concat(d))
     size += 1
 
     return data
@@ -14,7 +13,7 @@ function Queue (...list) {
 
   function dequeue () {
     size -= 1
-    data = take(size, data)
+    data = data.slice(1)
 
     return data
   }
